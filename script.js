@@ -80,10 +80,10 @@ const renderSingle = (pokemon) => {
   `;
 };
 
-// --- Render de la grilla de Pokémon de tipo Ada ---
+// --- Render de la grilla de Pokémon de tipo Hada ---
 const renderFireGrid = (list) => {
   if (!list.length) {
-    fireGrid.innerHTML = '<p class="placeholder">No se pudieron cargar los Pokémon de tipo Ada.</p>';
+    fireGrid.innerHTML = '<p class="placeholder">No se pudieron cargar los Pokémon de tipo Hada.</p>';
     return;
   }
 
@@ -133,14 +133,14 @@ const handleSearch = async (event) => {
   }
 };
 
-// --- Controlador que carga todos los Pokémon de tipo Ada ---
+// --- Controlador que carga todos los Pokémon de tipo Hada ---
 const handleFire = async () => {
   fireButton.disabled = true;
   fireGrid.innerHTML = '<p class="placeholder">Cargando lista...</p>';
-  setStatus("Cargando todos los Pokémon de tipo Ada...", "info");
+  setStatus("Cargando todos los Pokémon de tipo Hada...", "info");
 
   try {
-    // Paso 1: obtener la lista de Pokémon de tipo Ada.
+    // Paso 1: obtener la lista de Pokémon de tipo Hada.
     // Endpoint: GET https://pokeapi.co/api/v2/type/fire -> devuelve nombres/URLs.
     const response = await fetch(`${API_BASE}/type/fairy`);
     if (!response.ok) {
@@ -158,10 +158,10 @@ const handleFire = async () => {
       .sort((a, b) => a.id - b.id);
 
     renderFireGrid(firePokemons);
-    setStatus(`Listo: ${firePokemons.length} Pokémon de tipo Ada.`, "ok");
+    setStatus(`Listo: ${firePokemons.length} Pokémon de tipo Hada.`, "ok");
   } catch (error) {
     fireGrid.innerHTML = '<p class="placeholder">No se pudo consultar la PokéAPI ahora.</p>';
-    setStatus("No se pudieron cargar los Pokémon de tipo Ada. Intenta nuevamente.", "error");
+    setStatus("No se pudieron cargar los Pokémon de tipo Hada. Intenta nuevamente.", "error");
   } finally {
     fireButton.disabled = false;
   }

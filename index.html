@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metadatos básicos de documento y viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descripción para motores de búsqueda y redes -->
+    <meta name="description"
+        content="POKECLASE: Explora la PokéAPI, busca un Pokémon por nombre o ID y descubre todos los Pokémon de tipo Ada. Proyecto IESTP Señor de la Divina Misericordia.">
+    <!-- Color de interfaz en navegadores móviles -->
+    <meta name="theme-color" content="#f2ede7">
+    <title>IESTP SDM | POKECLASE</title>
+    <!-- Precarga de fuentes de Google para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="hero">
+            <!-- Encabezado institucional con espacio para el logo y nombre del instituto -->
+            <div class="brand">
+                <img src="https://www.isdm.edu.pe/images/logo---copia_cizweupl.png" alt="Logo del instituto" />
+
+                <div class="brand-text">
+                    <h1 class="brand-name">IESTP Señor de la Divina Misericordia</h1>
+
+                </div>
+            </div>
+            <div class="brand">
+                <h2 class="brand-note">
+                    Ventocilla Oncoy Ivan David <br />
+                    VI ciclo<br />
+                    Arquitectura de Plataformas y Servicios
+                    de Tecnología de la Información
+
+                </h2>
+
+            </div>
+
+            <!-- Bloque de títulos y claim principal de la página -->
+            <div class="titles">
+                <h1>POKECLASE</h1>
+                <p>Busca un Pokémon por <strong>nombre o ID</strong> y
+                    descubre todos los Pokémon de tipo Ada.</p>
+            </div>
+
+            <!-- Formulario de búsqueda individual y CTA de lista tipo fuego -->
+            <div class="actions">
+                <form id="search-form" class="search-form">
+                    <label for="pokemon-input">Nombre o ID del
+                        Pokémon</label>
+                    <div class="input-group">
+                        <input id="pokemon-input" name="pokemon" type="text" placeholder="Ejemplo: charmander o 4"
+                            autocomplete="off" required>
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </header>
+
+        <section class="status" id="status" aria-live="polite"></section>
+
+        <!-- Resultado de búsqueda individual -->
+        <section class="single" aria-live="polite">
+            <h2>Resultado individual</h2>
+            <div id="pokemon-card" class="card single-card empty">
+                <p class="placeholder">Ingresa un nombre para ver la
+                    información del
+                    Pokémon.</p>
+            </div>
+        </section>
+
+        <!-- Listado dinámico de todos los Pokémon de tipo Hada -->
+        <section class="fire-section">
+            <div class="section-header">
+                <h2>Pokémon de tipo Hada</h2>
+                <p>Lista dinámica obtenida desde la PokéAPI.</p>
+                <button class="fire-btn" id="fire-btn" type="button">Traer todos los de tipo Hada</button>
+            </div>
+            <div id="fire-grid" class="grid"></div>
+        </section>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
